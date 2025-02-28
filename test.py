@@ -15,8 +15,8 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color:rgb(74, 85, 97);
-        color:rgb(255, 255, 255);
+        background-color:rgb(255, 255, 255);
+        color:rgb(0, 0, 0);
         font-family: 'Arial', sans-serif;
     }
    
@@ -28,6 +28,9 @@ st.markdown(
         font-weight: bold;
         margin-bottom: 25px;
     }
+    .stock-data {
+  color: white;
+}
     .live-stocks {
         text-align: center;
         font-size: 1.5em;
@@ -59,10 +62,10 @@ st.markdown(
         text-align: center;
         padding: 15px;
         margin-top: 30px;
-        color: #ecf0f1;
+        color:rgb(255, 255, 255);
         font-size: 1em;
         font-weight: bold;
-        background-color:rgb(74, 85, 97);
+        background-color:rgb(88, 98, 108);
     }
     </style>
     """,
