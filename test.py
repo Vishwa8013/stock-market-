@@ -15,57 +15,108 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color:rgb(255, 255, 255);
-        color:rgb(0, 0, 0);
+        background-color: #121212;
+        color: #EAEAEA;
         font-family: 'Arial', sans-serif;
     }
-   
     
     .title {
         text-align: center;
-        font-size: 3em;
-        color:rgb(255, 158, 158);
+        font-size: 2.8em;
+        color: #00A86B;
         font-weight: bold;
         margin-bottom: 25px;
     }
-    .stock-data {
-  color: white;
-}
+    
     .live-stocks {
         text-align: center;
         font-size: 1.5em;
-        color:rgb(210, 191, 115);
+        color: #FFD700;
         font-weight: bold;
         margin-bottom: 20px;
     }
+    
     .info-message {
-        color:rgb(234, 239, 245);
-        font-size: 1.2em;
+        color:#F5F5DC;
+        font-size: 1.3em;
         text-align: center;
+        font-weight: bold;
         margin-top: 20px;
     }
+    
     .sidebar .sidebar-content {
-        background:rgb(0, 0, 0) !important;
-        color: #ecf0f1;
+        background: #1E1E1E !important;
+        color: #EAEAEA;
+        border-right: 1px solid #444;
     }
+    
     .sidebar .stButton>button {
-        background-color: #0d6efd !important;
+        background-color: #0078D7 !important;
         color: white !important;
         border-radius: 10px;
         font-size: 1.1em;
         padding: 8px;
+        width: 100%;
     }
+    
     .sidebar .stButton>button:hover {
         background-color: #0056b3 !important;
     }
+    
     .footer {
         text-align: center;
         padding: 15px;
         margin-top: 30px;
-        color:rgb(255, 255, 255);
+        color: white;
         font-size: 1em;
         font-weight: bold;
-        background-color:rgb(88, 98, 108);
+        background-color: #0078D7;
+        border-radius: 10px;
+    }
+
+    .card {
+        background-color: #222;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    }
+    
+    .card-title {
+        font-size: 1.5em;
+        color: #00A86B;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    
+    .card-content {
+        font-size: 1.1em;
+        color: #EAEAEA;
+    }
+    
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    
+    .table th, .table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #444;
+    }
+    
+    .table th {
+        background-color: #0078D7;
+        color: #ffffff;
+    }
+    
+    .table tr:hover {
+        background-color: #333;
+    }
+    
+    .st-markdown{
+        background-color:#121212; 
     }
     </style>
     """,
@@ -96,11 +147,9 @@ except Exception as e:
 
 # Sidebar for navigation and instructions
 with st.sidebar:
-    st.header("🌐 ABOUT")
-    st.write("Enter stock tickers in the main window to get started.")
-    st.write("This project is developed as a college submission showcasing stock market prediction using Linear Regression and Decision Tree Regression.")
-    st.markdown("---")
-    st.write("Developed by: [VISHWA, MOUNISH, VAISHANVI, PAVITHRA]")
+    st.markdown ("<div class='card'><div class='card-title'>🌐 ABOUT</div><div class='card-content'>Enter stock tickers in the main window to get started. This project is developed as a college submission showcasing stock market prediction using Linear Regression and Decision Tree Regression.</div></div>", unsafe_allow_html=True)
+    st.markdown("<div class='card'><div class='card-title'>👨‍💻 DEVELOPERS</div><div class='card-content'>Developed by: [VISHWA, MOUNISH, VAISHANVI, PAVITHRA]</div></div>", unsafe_allow_html=True)
+    
     
     # Logout Button
     if st.button("Logout", key="logout"):
@@ -203,6 +252,6 @@ else:
             st.error(f"An error occurred while processing {ticker}: {e}")
 
 # Footer
-st.markdown("<div class='footer'>🚀 Created by Vishwa.<br>Data sourced from Yahoo Finance.<br>Predictions are for educational purposes only.</div>", unsafe_allow_html=True)
+st.markdown("<div class='info-message'>🚀 Created by Vishwa.<br>Data sourced from Yahoo Finance.<br>Predictions are for educational purposes only.</div>", unsafe_allow_html=True)
 
 st.markdown("</div>", unsafe_allow_html=True)
